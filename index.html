@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoChat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+
+        <!-- Menu lateral -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Conversas</h2>
+                <button class="toggle-btn" id="toggle-sidebar">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            <ul class="chat-list" id="chat-list">
+
+                <!-- Histórico de conversas aparecerá aqui -->
+            </ul>
+            <button id="new-chat-btn" class="new-chat-btn">+ Novo Chat</button>
+        </div>
+
+        <!-- Botão para reabrir a barra lateral -->
+
+        <button class="reopen-btn" id="reopen-sidebar">
+            <span class="material-icons">menu</span>
+        </button>
+
+        <!-- Área principal do chat -->
+        <div class="main" id="main-chat">
+
+
+            <!-- Cabeçalho com o logo "InfoChat" -->
+
+            <div class="header">
+                <h1 class="logo">InfoChat</h1>
+            </div>
+            <div class="content">
+                <div class="welcome-message" id="welcome-message">
+                    <h2>Como podemos te ajudar?</h2>
+                </div>
+                <div class="messages" id="messages"></div>
+            </div>
+            <div class="footer">
+                <textarea id="user-input" placeholder="Digite sua mensagem..." class="message-input"></textarea>
+                <button class="send-btn" id="send-btn">Enviar</button>
+            </div>
+        </div>
+
+        <!-- Ícones do Google Material -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="script.js"></script>
+    </body>
+</html>

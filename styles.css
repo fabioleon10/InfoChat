@@ -1,0 +1,244 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.layout {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-300px);
+    width: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #00d4aa;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    outline: none;
+}
+
+.toggle-btn:hover {
+    color: #00b894;
+}
+
+.reopen-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    color: #00d4aa;
+    font-size: 24px;
+    display: none;
+    z-index: 1000;
+    transition: color 0.3s ease;
+}
+
+.reopen-btn.visible {
+    display: block;
+}
+
+.reopen-btn:hover {
+    color: #00b894;
+}
+
+.new-chat-btn {
+    background-color: #00d4aa;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.new-chat-btn:hover {
+    background-color: #00b894;
+}
+
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.chat-list li {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #2a2a2a;
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-list li:hover {
+    background-color: #00d4aa;
+    color: #1e1e1e;
+}
+
+.chat-list li.active {
+    background-color: #00d4aa;
+    color: #1e1e1e;
+}
+
+.chat-list li .chat-preview {
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed + .main {
+    margin-left: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+}
+
+.header .logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #00d4aa;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.welcome-message {
+    text-align: center;
+    margin-top: 20%;
+    color: #a8a8a8;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px;
+    align-self: center;
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    max-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    line-height: 1.5;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #444654;
+    color: #fff;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color: #333;
+    color: #fff;
+}
+
+.footer {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    gap: 10px;
+    background-color: #2a2a2a;
+    align-self: center;
+    border-radius: 5px;
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    resize: none;
+    height: 50px;
+}
+
+.send-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00d4aa;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.send-btn:hover {
+    background-color: #00b894;
+}
